@@ -1,2 +1,5 @@
 parsecontent/__pycache__
 .idea/
+/*.egg-info
+/dist/
+*.pyc
