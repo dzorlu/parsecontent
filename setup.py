@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='parsecontent',
-      version='0.1.2',
+      version='0.1.3',
       description='Classify social media posts',
       url='http://github.com/dzorlu/parsecontent',
       author='Deniz Zorlu',
