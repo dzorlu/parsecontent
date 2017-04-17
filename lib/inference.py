@@ -13,7 +13,7 @@ from keras.models import load_model
 from keras.preprocessing.sequence import pad_sequences
 
 import pickle
-from utils import *
+from .utils import *
 
 INFERENCE_CUTOFF = 0.8
 

@@ -5,11 +5,11 @@ from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import Tokenizer
 from sklearn.model_selection import train_test_split
 
-import conv1d
-import ensemble
-import lstm
-import tf_idf
-from utils import *
+from .conv1d import *
+from .ensemble import *
+from .lstm import *
+from .tf_idf import *
+from .utils import *
 
 MAX_SEQUENCE_LENGTH = 100
 MAX_NB_WORDS = 10000
