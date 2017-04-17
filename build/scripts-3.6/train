@@ -1,0 +1,12 @@
+#!python
+import train
+import argparse
+
+_parser = argparse.ArgumentParser()
+_parser.add_argument("--input-file", help="the full path to data to train the model on")
+_parser.add_argument("--model-path", help="the full path where the output will be persisted")
+_parser.add_argument("--glove-path", help="the full path where the word embedding live")
+args = _parser.parse_args()
+MODEL_PATH, INPUT_FILE_PATH, GLOVE_DIR = args.model_path, args.input_file, args.glove_path
+
+train.main(MODEL_PATH, INPUT_FILE_PATH, GLOVE_DIR)

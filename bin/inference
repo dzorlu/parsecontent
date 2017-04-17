@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+import inference
+import argparse
+
+
+_parser = argparse.ArgumentParser()
+_parser.add_argument("--pass-to-human", default=False, help="Pass low confidence scores to human for evaluation")
+_parser.add_argument("--num-cases-human", default=1000,
+                     help="Determine the number of cases that will be passed to humans")
+_parser.add_argument("--input-file", help="the full path to do inference")
+_parser.add_argument("--output-file", help="the full path for the output file")
+_parser.add_argument("--model-path", help="the full path where the output will be persisted")
+_parser.add_argument("--glove-path", help="the full path where the word embedding live")
+args = _parser.parse_args()
+PASS_LOW_CONFIDENCE_TO_HUMAN, NB_CASES_HUMAN_EVAL, MODEL_PATH, TEST_FILE_PATH, OUTPUT_FILE_PATH, GLOVE_DIR = \
+  args.pass_to_human, args.num_cases_human, args.model_path, args.input_file, args.output_file, args.glove_path
+
+inference.main(PASS_LOW_CONFIDENCE_TO_HUMAN, NB_CASES_HUMAN_EVAL, MODEL_PATH, TEST_FILE_PATH, OUTPUT_FILE_PATH, GLOVE_DIR)
