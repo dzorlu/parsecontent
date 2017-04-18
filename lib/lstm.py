@@ -1,3 +1,8 @@
+"""
+Bi-directional LSTM model
+"""
+
+
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Embedding, LSTM, Bidirectional
 

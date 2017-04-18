@@ -56,16 +56,16 @@ def main(model_path, input_file_path, glove_dir):
   print("Training the model...")
   # NLP Models
   # TFIDF + Linear SVM
-  fit_tfidf = tf_idf.train_tfidf_model((text, label))
+  fit_tfidf = train_tfidf_model((text, label))
 
   # Word Embeddings and Conv1D
   embedding_layer = create_embedding_layer(tokenizer.word_index, embedding_matrix)
-  model_conv = conv1d.create_conv1d_model(embedding_layer)
+  model_conv = create_conv1d_model(embedding_layer)
   fit_conv1d = train_model(model_conv, X, label)
 
   # Bi-directional LSTM
   embedding_layer = create_embedding_layer(tokenizer.word_index, embedding_matrix)
-  model_lstm = lstm.create_lstm_model(embedding_layer)
+  model_lstm = create_lstm_model(embedding_layer)
   fit_lstm = train_model(model_lstm, X, label)
 
   # Ensemble Model
@@ -74,7 +74,7 @@ def main(model_path, input_file_path, glove_dir):
   pholdout_lstm = fit_lstm.predict(X_holdout)
   pholdout_conv = fit_conv1d.predict(X_holdout)
   feature_ensemble = np.vstack((pholdout_tfidf[:, 1], pholdout_lstm[:, 1], pholdout_conv[:, 1])).T
-  ensemble_model = ensemble.train_ensemble((feature_ensemble, label_holdout))
+  ensemble_model = train_ensemble((feature_ensemble, label_holdout))
 
   # Save Models
   print("Saving Models...")

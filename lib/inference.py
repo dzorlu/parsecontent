@@ -6,8 +6,6 @@ args:
 	--input-file", "the full path to do inference"
 	--model-path", help="the full path where the output will be persisted"
 	--glove-path", the full path where the word embedding live"
-	
-If pass-to-human is set to True, 
 """
 from keras.models import load_model
 from keras.preprocessing.sequence import pad_sequences
@@ -15,7 +13,7 @@ from keras.preprocessing.sequence import pad_sequences
 import pickle
 from .utils import *
 
-INFERENCE_CUTOFF = 0.8
+INFERENCE_CUTOFF = 0.35
 
 
 def main(pass_low_confidence_to_human,

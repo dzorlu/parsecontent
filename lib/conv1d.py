@@ -1,10 +1,11 @@
+"""
+ConvNet1D model
+"""
 
 from keras.layers import Dense, Input, Flatten, Dropout
 from keras.layers import Conv1D, MaxPooling1D, Embedding
 from keras.models import Model
 
-"""
-"""
 MAX_SEQUENCE_LENGTH = 100
 
 
